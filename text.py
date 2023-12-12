@@ -1,7 +1,6 @@
 from tkinter import *
 from PIL import Image,ImageTk
 from random import randint
-print
 root=Tk()
 root.title('rock scissor paper')
 root.configure(background='#9b59b6')
