@@ -36,6 +36,15 @@ msg.grid(row=3,column=2)
 #update choice
 choices=['rock','paper','scissor']
 def updatechoice(x):
+    #for computer
+    compchoice=choices[randint(0,2)]
+    if compchoice=='rock':
+        comp_label.configure(image=rock_img_comp)
+    elif compchoice=='paper':
+        comp_label.configure(image=paper_img_comp)
+    else:
+        comp_label.configure(image=scissor_img_comp)
+#for user
     if x=='rock':
         user_label.configure(image=rock_img)
     elif x=='paper':
@@ -43,14 +52,7 @@ def updatechoice(x):
     else:
         user_label.configure(image=scissor_img)
     checkwin(x,compchoice)
-#for computer
-compchoice=choices[randint(0,2)]
-if compchoice=='rock':
-    comp_label.configure(image=rock_img_comp)
-elif compchoice=='paper':
-    comp_label.configure(image=paper_img_comp)
-else:
-    comp_label.configure(image=scissor_img_comp)
+
 #update message
 def updatemessage(x):
     msg['text']=x
@@ -81,7 +83,7 @@ def checkwin(player,computer):
             updatecomputerscore()
         else:
             updatemessage('you win')
-            updatecomputerscore()
+            updateuserscore()
     elif player =='scissor':
         if computer =='rock':
             updatemessage('you loose')
